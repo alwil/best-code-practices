@@ -29,5 +29,10 @@ backgroundColor: #fff
 - Name
 - Background 
 - Motivation for this workshop
-- **Bring a project**
+- **Did you bring a project?**
  
+---
+# What will will do in this workshop
+
+
+>We want to teach you **good habits** that will make your work more accessible, thrustworthy, and reproducible by others
