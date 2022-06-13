@@ -1,7 +1,7 @@
 ---
 marp: true
 title: "Code Quality"
-paginate: true
+paginate: false
 theme: custom
 backgroundColor: #fff
 
@@ -65,8 +65,8 @@ print(hurts)
   - make variable names _just_ long enough to be meaningful
 
 ---
-
-#### Compare:
+# Code readability
+**Compare**
 
 ```python
 for i in my_shopping_basket:
@@ -75,7 +75,7 @@ for i in my_shopping_basket:
   else:
     disc(i)
 ```
-
+**with**
 ```python
 for item in basket:
   if(testNecessity(item)) > 10:
@@ -133,21 +133,32 @@ _Tip! Use_ `#TODO` _or_ `//TODO` _(depending on your comment marker) to easily f
 Many IDEs extract these into a task list (e.g. [MATLAB](https://blogs.mathworks.com/community/2008/03/17/whats-on-my-todo-list/))!_
 
 ---
-# Code reusability
-
-- Less code written, more work done
-
-- Writing a tool while doing your analysis
-
-- Stop reinventing the wheel!
-
-
----
 # Code reusability: some guidelines
 
 - Separate code and data: data is specific, code need not be
   - consider using a config file for project-specific (meta)data in a interoperable datatype (`.json`, `yaml`)
   - but DO hard-code unchanging variables, e.g. `gravity = 9.80665`, **once**.
+
+---
+# Modular code development
+
+## Some questions
+- What best practices can you recommend to arrive at well structured, modular code in your favourite programming language?
+- What would you recommend your colleague who starts in the same programming language?
+- How do you deal with code complexity in your projects?
+
+---
+# Preventing the tar pit
+
+- Over time, software tends to become harder and harder to reason about
+- Small changes become harder to implement
+- Bugs start appearing in unexpected places
+- More time is spent debugging than developing
+- Complexity strangles development because it does not scale well
+  
+---
+![width:650](img/development-speed.svg)
+What do you think think properly means?
 
 ---
 # Code reusability: some guidelines
@@ -156,6 +167,49 @@ Many IDEs extract these into a task list (e.g. [MATLAB](https://blogs.mathworks.
   - One function for one purpose
   - One class for one purpose
   - One script for one purpose (no copy-pasting to recycle it!)
+
+---
+# Purity
+- Pure functions have no notion of state, i.e. they take input values and return values
+- Given the same input, a pure function _always_ returns the same value
+
+### Stateful code
+```python
+f_to_c_offset = 32.0
+f_to_c_factor = 0.555555555
+temp_c = 0.0
+
+def fahrenheit_to_celsius_bad(temp_f):
+    global temp_c
+    temp_c = (temp_f - f_to_c_offset) * f_to_c_factor
+
+fahrenheit_to_celsius_bad(temp_f=100.0)
+print(temp_c)
+```
+---
+### Pure - no side effects
+```python
+def fahrenheit_to_celsius(temp_f):
+    temp_c = (temp_f - 32.0) * (5.0/9.0)
+    return temp_c
+temp_c = fahrenheit_to_celsius(temp_f=100.0)
+print(temp_c)
+```
+### Pure functions are easy to
+- Test
+- Understand
+- Reuse
+- Simplify
+- Compose
+
+---
+# Divide and conquer
+- Split up the code
+- Construct your program from parts
+    - functions
+    - modules
+    - packages (Python) or libraries (C or C++ or Fortran)
+
 ---
 # Code reusability: some guidelines
 
@@ -163,7 +217,11 @@ Many IDEs extract these into a task list (e.g. [MATLAB](https://blogs.mathworks.
   - Write routines in functions, i.e., code you reuse often
   - Identify potential functions by action: functions perform tasks (e.g. sorting, plotting, saving a file, transform data...)
  
-
+**Examples**
+- Import functions
+- Export functions
+- Plotting functions
+- ...
 
 ---
 # Code reusability through functions
@@ -176,15 +234,19 @@ Functions are smaller code units reponsible of one task.
 
 - What arguments a function accept is defined by its parameters
 
+---
 Functions do not necessarily make code shorter (at first)! Compare:
 
 ```python
 indexATG = [n for n,i in enumerate(myList) if i == 'ATG']
 indexAAG = [n for n,i in enumerate(myList) if i == 'AAG']
 ```
+with
 
 ```python
-def indexString(inputList,z):
+def indexString(inputList: List, z: str) -> List:
+  """Find index of string in list
+  """
 	zIndex = [n for n,i in enumerate(li) if i == z]
 	return zIndex
 	
@@ -192,22 +254,25 @@ indexATG = indexString(myList,'ATG')
 indexAAG = indexString(myList,'AAG')
 ```
 
----
-
-# Think in building blocks!
-
-.pull-left[
-Small, cohesive units are much better than...
-
-![tetris](images/tetris.svg)]
---
-.pull-right[
-... a customized behemoth!
-![tetris](images/tetris_help.svg)]
-
+Now, you can reuse your function elsewhere, made it general, and have added additional documentation
 
 ---
 
+# Modular vs monolith
+
+![height:440](img/tetris.svg)  ![bg right:50% height:500](img/tetris_help.svg)
+
+---
+
+# Functions, functions, functions
+- Build your code from functions
+- Break your code down to more functions
+    - if you have too many levels of indentation
+    - if a function gets too long
+    - if a function does more than one thing
+    - if you find it hard to name a function
+    - if you find it hard to write tests for a function
+---
 # Your turn: visualize your code!
 
 Choose:
