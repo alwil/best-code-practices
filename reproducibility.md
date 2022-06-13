@@ -10,19 +10,28 @@ backgroundColor: #fff
 
 
 ---
-# FAIR
-- Findable
-- Accessible
-- Interoperable
-- Reusable
-
----
 # How do you currently develop your code?
 
+- Tools
+- Collaborators
+- Storage
+- Sharing
+
+Are you happy with the way you currently work?
+
+---
+# The FAIR principles
+
+Original paper demands that all scholarly digital research objects should be findable,
+accessible, interoperable, and reusable
+
+Increasingly recognized as essential for the transition towards Open Science
+
+![bg right:40% width:500](./img/FAIR_paper.png)
 
 
-
-## Is this enough?
+---
+# Would this be enough?
 - Access to the code
 - Access to the data
 - (And let's assume we can replicate the environment)
@@ -38,7 +47,7 @@ How confident do you feel?
 How confident do you feel?
 
 **We need to do more to inspire trust**
-- The code is correct (and I have made ti easy for you/someone to check)
+- The code is correct (and I have made it easy for you/someone to check)
 - My workflow is robust
 - My workflow _itself_ is accessible, and I will be guiding you through it.
 
@@ -60,17 +69,15 @@ How confident do you feel?
 6. Ensure continuity of your work
 
 ---
-![](./img/barriers-reproducibility.png)
+![width:1000](./img/barriers-reproducibility.png)
 
 ---
-- Limited incentives 
-
 ## Be aware of the human side
 - No credit
 - Lacking programming skills
 - Sharing anxiety - Am I good enough? --> imposter syndrome
 
-
+![bg right:50% height:400](./img/make-ok-to-be-human.jpg)
 
 ---
 # Reproducibility crisis
@@ -119,7 +126,12 @@ Do you think this is sufficient?
 Inspect your project and identify issues with reproducibility
 
 ---
-# Reproducibility is not a magic bullet
+![width:1200](./img/Glerean_continuum_best_practices1800.png)
+
+---
+# How can you measure FAIR
+
+- The Netherlands eScience Center's "Five Recommendations for FAIR Software" (https://fair-software.nl) and 
 
 
 ---
@@ -144,5 +156,6 @@ Inspect your project and identify issues with reproducibility
 4. Write useful documentation
 
 ---
-# FAIR for Research Software Checklist
+# Metrics for  FAIR for Research Software
+
 
