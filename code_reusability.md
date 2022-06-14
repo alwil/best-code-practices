@@ -5,14 +5,69 @@ paginate: false
 theme: custom
 backgroundColor: #fff
 
+math: mathjax
+
 ---
+
+# II. Code reusability
+
+### Some questions
+- What does "modular code development" mean for you?
+- What best practices can you recommend to arrive at well structured, reusable code in your favourite programming language?
+- What do you know now about programming that you wish somebody told you earlier?
+
+---
+
+### Additional questions
+- Do you design a new code project on paper before coding? Discuss pros and cons.
+- Do you build your code top-down or bottom-up? Discuss pros and cons.
+- Would you prefer your code to be 2x slower if it was easier to read it?
+
+![bg left:40% width:400](img/complex-machine.jpg)
+
+---
+
+![bg left: width:400](https://imgs.xkcd.com/comics/good_code.png)
+
+---
+
+# [The tar pit](https://github.com/papers-we-love/papers-we-love/blob/master/design/out-of-the-tar-pit.pdf)
+
+- Over time, software tends to become harder and harder to reason about
+- Small changes become harder to implement
+- Bugs start appearing in unexpected places
+- More time is spent debugging than developing
+- Complexity strangles development because it does not scale well
+  
+_Do you recognize this?_
+
+---
+
+![width:650](img/development-speed.svg)
+Do you agree and what do you think "properly" means?
+
+---
+
+# Moduarity and composition
+
+- Build complex behaviour from simple components
+- We can reason about the components and the composite
+- Composition is key to managing complexity
+- Modularity does not imply simplicity, but is enabled by it
+
+![width:800](img/knit_vs_lego.jpg)
+
+---
+
 # Code reusability: some guidelines
 
 - Separate code and data: data is specific, code need not be
   - consider using a config file for project-specific (meta)data in a interoperable datatype (`.json`, `yaml`)
+  - use relative paths
   - but DO hard-code unchanging variables, e.g. `gravity = 9.80665`, **once**.
 
 ---
+
 # Code reusability: some guidelines
 
 - Do One Thing (and do it well)
@@ -21,9 +76,45 @@ backgroundColor: #fff
   - One script for one purpose (no copy-pasting to recycle it!)
 
 ---
+
+# Code reusability: some guidelines
+
+- Don't Repeat Yourself (DRY): use functions
+  - Write routines in functions, i.e., code you reuse often
+  - Identify potential functions by action: functions perform tasks (e.g. sorting, plotting, saving a file, transform data...)
+  - Single source of truth reduces maintenance and makes debugging easier
+
+---
+
 # Purity
-- Pure functions have no notion of state, i.e. they take input values and return values
+- Pure functions have no notion of state, i.e. they take input values and return values. 
 - Given the same input, a pure function _always_ returns the same value
+
+### Examples
+- Mathematical functions
+  $f(x, y) = x - x^2 + x^3 + y^2 + xy$
+
+- Unix shell
+  ```bash
+    cat somefile | grep somestring | sort | uniq | ..
+  ```
+
+---
+
+# <!-- fit --> Pure functions are easy to
+- Test (_we will address testing later_)
+- Understand
+- Reuse
+- Simplify
+- Parallelize
+- Optimize
+- Compose
+
+![bg left:50% width:600](img/Pure-functions.png)
+
+---
+
+# Example: pure vs. stateful
 
 ### Stateful code
 ```python
@@ -38,7 +129,9 @@ def fahrenheit_to_celsius_bad(temp_f):
 fahrenheit_to_celsius_bad(temp_f=100.0)
 print(temp_c)
 ```
+
 ---
+
 ### Pure - no side effects
 ```python
 def fahrenheit_to_celsius(temp_f):
@@ -47,41 +140,17 @@ def fahrenheit_to_celsius(temp_f):
 temp_c = fahrenheit_to_celsius(temp_f=100.0)
 print(temp_c)
 ```
-### Pure functions are easy to
-- Test
-- Understand
-- Reuse
-- Simplify
-- Compose
+---
+
+# Recommendations
+- I/O is impure (reading/writing)
+- Keep I/O on the outside and connected
+- Keep the inside of your code pure/stateless
+
+![width:800](img/good-vs-bad.svg)
 
 ---
-# Divide and conquer
-- Split up the code
-- Construct your program from parts
-    - functions
-    - modules
-    - packages (Python) or libraries (C or C++ or Fortran)
 
----
-# Code reusability: some guidelines
-
-- Don't Repeat Yourself (DRY): use functions
-  - Write routines in functions, i.e., code you reuse often
-  - Identify potential functions by action: functions perform tasks (e.g. sorting, plotting, saving a file, transform data...)
- 
-
----
-# Code reusability through functions
-
-Functions are smaller code units reponsible of one task.
-
-- Functions are meant to be reused
-
-- Functions accept arguments (though they may also be empty!)
-
-- What arguments a function accept is defined by its parameters
-
----
 Functions do not necessarily make code shorter (at first)! Compare:
 
 ```python
@@ -101,33 +170,41 @@ indexATG = indexString(myList,'ATG')
 indexAAG = indexString(myList,'AAG')
 ```
 
-Now, you can reuse your function elsewhere, made it general, and have added additional documentation
+But, you can now reuse your function elsewhere, made it general (**one instance!**), and have added additional documentation (function name, docstring, typehinting)
 
 ---
+
+# Divide and conquer
+
+### How to approach your code
+- Split up the code into functional parts
+- Construct your program from these parts
+    - functions
+    - modules
+    - packages (Python) or libraries (C or C++ or Fortran)
+
+---
+
 # Your turn: visualize your code!
 
 Choose:
 - Make a screenshot, process it in paint, powerpoint, or your favorite editor;
 - Copy paste your code to a text editor, and use markers.
 
-The objective is for you to 'see' your code!
+**The objective is for you to 'see' your code!**
 
 - Yellow denotes scripted, unstructured code _(basic, sequential lines of instructions)_
-   
 - Purple denotes functions or other structured code _(e.g. for-loops, conditionals, etc.)_
-
 - Green denotes comments (or comment blocks)
-   _(consider combining this with yellow for heavily commented code)_
 
 Again, make notes in your code (`#TODO`!) if you see:
 - **Scripted code**: this can be a function
 - **Structured code**: this should be re-structured 
 
-What can you learn from your colleagues today?
 
 ---
 
-# Modular vs monolith
+# <!-- fit --> How does your code look?
 
 ![height:440](img/tetris.svg)  ![bg right:50% height:500](img/tetris_help.svg)
 
@@ -141,6 +218,7 @@ What can you learn from your colleagues today?
     - if a function does more than one thing
     - if you find it hard to name a function
     - if you find it hard to write tests for a function
+
 ---
 
 # <!-- fit --> Simplicity and clarity before elegance before efficiency
@@ -151,10 +229,15 @@ What can you learn from your colleagues today?
 - If you have to optimize, measure, do not guess
 
 **Simple is better than complex**
-![width:500px](img/god_knows.jpg)
+
+>Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it. (Brian W. Kernighan)
+---
+
+![bg left: width:1000px](img/god_knows.jpg)
 
 
 ---
+
 # Your turn: make a function
 
 You have visualized your code. Use your findings to improve it!
@@ -164,3 +247,12 @@ You have visualized your code. Use your findings to improve it!
 - If there is no function to work on: try and address the readability of your code.
 
 _However_: for future exercises you will need at least one function, preferably with parameters, in your code! 
+
+---
+
+# Conclusions
+- Divide and isolate
+- Compose your code out of pure functions
+- Keep it simple
+- Prefer immutable data structures (_immutable_ means that the data value cannot be modified)
+- Think about the people reading your code, do not ["Write Unmaintainable Code"](https://www.doc.ic.ac.uk/~susan/475/unmain.html) 

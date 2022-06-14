@@ -1,7 +1,7 @@
 ---
 marp: true
 title: "Intro"
-paginate: true
+paginate: false
 theme: custom
 backgroundColor: #fff
 
@@ -18,26 +18,25 @@ backgroundColor: #fff
 
 13:30 - Welcome
 13:45 - FAIR software and reproducibility
+14:30 - Version control
 
-14:30 - **BREAK**
+15:00 - **BREAK**
 
-14:45 - Version control
-
-15:45 - **BREAK**
-
-16:00 - Code quality
+15:20 - Code quality (readability, reusability, robustness)
+16:30 - Documentation
 16:45 - Closing remarks and questions
 
 ---
 # Who am I?
 
-Maurits Kok
+#### Maurits Kok
 
 Research Software Engineer at the [Digital Competence Center ](https://www.tudelft.nl/en/library/library-for-researchers/library-for-researchers/setting-up-research/dcc)
 
-**Background**
+#### Background
 - PhD in molecular biophysics
 - Started as experimental physicist, moved towards stochastic modelling
+- Work mostly in Python and MATLAB
 - I don't have a computer science degree
 
 ---
@@ -45,10 +44,26 @@ Research Software Engineer at the [Digital Competence Center ](https://www.tudel
 - Name
 - Background 
 - Motivation for this workshop
+- OS and programming language
 - **Did you bring a project?**
 
 ---
-# What will will do in this workshop
+# What will you do in this workshop?
 
 We want to teach you **good habits** that will make your work more accessible, thrustworthy, and reproducible by others. 
 
+#### You will get the opportunity to apply these habits during the workshop.
+
+---
+
+# References
+
+These materials are composed of 
+
+- Utrecht University - [Best Practices In Writing Reproducible Code](https://utrechtuniversity.github.io/workshop-computational-reproducibility/docs/)
+- Aalto University - [How To Make Your Research Reproducible and Reusable](https://docs.google.com/presentation/d/14fwQgAM1-NIm11MIf11hRyz3LgwAEDgh/edit#slide=id.p6)
+- Code Refinery - [Modular Code Development](http://cicero.xyz/v3/remark/0.14.0/github.com/coderefinery/modular-code-development/master/talk.md/#1)
+- Software Carpentry - [Programming With Matlab](https://swcarpentry.github.io/matlab-novice-inflammation/)
+- Esther Plomp - [Open Science: Crash Course](https://estherplomp.github.io/PRES-data-software/#1)
+
+All available under a Creative Common License 

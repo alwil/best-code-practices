@@ -6,6 +6,7 @@ theme: custom
 backgroundColor: #fff
 
 ---
+
 # Writing reproducible code
 
 
@@ -36,17 +37,14 @@ Increasingly recognized as essential for the transition towards Open Science
 - Access to the data
 - (And let's assume we can replicate the environment)
 
-How confident do you feel?
+#### How confident do you feel?
 
 ---
-# Is this enough?
-- Access to the code
-- Access to the data
-- (And let's assume we can replicate the environment)
 
-How confident do you feel?
+# Would this be enough?
 
-**We need to do more to inspire trust**
+#### We need to do more to inspire trust
+
 - The code is correct (and I have made it easy for you/someone to check)
 - My workflow is robust
 - My workflow _itself_ is accessible, and I will be guiding you through it.

@@ -6,38 +6,18 @@ theme: custom
 backgroundColor: #fff
 
 ---
-# <!-- fit -->  Aspects of good quality code
-
+# Aspects of good quality code 
+ 
 Today, you will review your code for
 
 - Readability
 - Reusability
 - Robustness
 
-![bg right:50% width:400](https://imgs.xkcd.com/comics/good_code.png)
+![bg right:40% width:450](img/wtfs_per_minute_thumb.jpg)
 
 ---
-# Some questions
-- What best practices can you recommend to arrive at well structured, readable code in your favourite programming language?
-- What would you recommend your colleague who starts in the same programming language?
-- How do you deal with code complexity in your projects?
-
-![bg left:40% width:400](img/complex-machine.jpg)
-
----
-# Preventing the [tar pit](https://github.com/papers-we-love/papers-we-love/blob/master/design/out-of-the-tar-pit.pdf)
-- Over time, software tends to become harder and harder to reason about
-- Small changes become harder to implement
-- Bugs start appearing in unexpected places
-- More time is spent debugging than developing
-- Complexity strangles development because it does not scale well
-  
----
-![width:650](img/development-speed.svg)
-What do you think properly means?
-
----
-# Code readability
+# I. Code readability
 #### Who is the audience that will read your code?
 
 >Code is for computer, comments are for humans.
@@ -128,21 +108,20 @@ with
 my_var = original_var + Modified(new_var)
 ```
 
-- _Are you using descriptive variables in your project?_
+_Are you using descriptive variables in your project?_
 
 
 ---
 # Comments
-- Comments that contradict the code are worse than no comments. Always make a priority of keeping the comments up-to-date when the code changes!
+- Comments that contradict the code are worse than no comments. Always make a priority of keeping the comments up-to-date when the code changes! 
 - Ensure that your comments are clear and easily understandable to other speakers of the language you are writing in (ENGLISH!)
+- Delete commented code 
 - Inline comments are unnecessary and in fact distracting if they state the obvious. 
 
 Don’t do this
-
 ```python
 x = x + 1                 # Increment x
 ```
-
 This is more useful
 ```python
 x = x + 1                 # Compensate for border
@@ -155,7 +134,7 @@ x = x + 1                 # Compensate for border
 - MATLAB style guide: [MATLAB File-exchange](http://cnl.sogang.ac.kr/cnlab/lectures/programming/matlab/Richard_Johnson-MatlabStyle2_book.pdf)
 
 ![width:800](https://imgs.xkcd.com/comics/code_quality.png)
-- _Are you already following a style guide?_
+_Are you already following a style guide?_
 
 ---
 # Your turn
