@@ -60,6 +60,7 @@ We want to teach you **good habits** that will make your work more accessible, t
 
 These materials are composed of 
 
+- The Turing Way - [Guide for Reproducible Research](https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html)
 - Utrecht University - [Best Practices In Writing Reproducible Code](https://utrechtuniversity.github.io/workshop-computational-reproducibility/docs/)
 - Aalto University - [How To Make Your Research Reproducible and Reusable](https://docs.google.com/presentation/d/14fwQgAM1-NIm11MIf11hRyz3LgwAEDgh/edit#slide=id.p6)
 - Code Refinery - [Modular Code Development](http://cicero.xyz/v3/remark/0.14.0/github.com/coderefinery/modular-code-development/master/talk.md/#1)
