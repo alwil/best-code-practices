@@ -6,20 +6,39 @@ theme: custom
 backgroundColor: #fff
 
 ---
-# Aspects of good quality code
+# <!-- fit -->  Aspects of good quality code
 
-- Readable
-- Reusable
-- Robust
+Today, you will review your code for
+
+- Readability
+- Reusability
+- Robustness
 
 ![bg right:50% width:400](https://imgs.xkcd.com/comics/good_code.png)
 
+---
+# Some questions
+- What best practices can you recommend to arrive at well structured, readable code in your favourite programming language?
+- What would you recommend your colleague who starts in the same programming language?
+- How do you deal with code complexity in your projects?
+
+![bg left:40% width:400](img/complex-machine.jpg)
+
+---
+# Preventing the tar pit
+- Over time, software tends to become harder and harder to reason about
+- Small changes become harder to implement
+- Bugs start appearing in unexpected places
+- More time is spent debugging than developing
+- Complexity strangles development because it does not scale well
+  
+---
+![width:650](img/development-speed.svg)
+What do you think properly means?
 
 ---
 # Code readability
-
 - Code is for computer, comments are for humans.
-
 
 ---
 # Code readability
@@ -31,27 +50,21 @@ backgroundColor: #fff
 ---
 
 #### Compare:
-```python
-this = function(arg1,arg2); res= arg1*arg2; return(res)
-hurts = mean(c(this(3,4),this(3,1),this(9,9))); print(hurts)
-```
 
 ```python
-def this(arg1, arg2)
-  res = arg1 * arg2
-  return(res)
-}
-
-hurts = mean(
-  c(
-    this(3,4),
-    this(3,1),
-    this(9,9)
-    )
-  )
-print(hurts)
+if foo == 'blah': do_blah_thing()
+do_one(); do_two(); do_three()
+```
+**with**
+```python
+if foo == 'blah':
+    do_blah_thing()
+do_one()
+do_two()
+do_three()
 ```
 
+Compound statements are generally discouraged
 
 ---
 # Code readability
@@ -68,7 +81,7 @@ print(hurts)
 # Code readability
 **Compare**
 
-```python
+```r
 for i in my_shopping_basket:
   if(test(i)) > 10:
     purch(i)
@@ -76,7 +89,7 @@ for i in my_shopping_basket:
     disc(i)
 ```
 **with**
-```python
+```r
 for item in basket:
   if(testNecessity(item)) > 10:
     purchase(item)
@@ -96,7 +109,7 @@ for item in basket:
   - start functions with a verb
   - make variable names _just_ long enough to be meaningful
 
-- use a consistent style
+- use a consistent style 
   - consistency will make your code easier to understand and maintain
   - consult a styleguide for your language (keep conventions, and don't reinvent the wheel)
   
@@ -110,14 +123,33 @@ myVar = original_variable + MOD(new.var)
 ```python
 my_var = original_var + Modified(new_var)
 ```
+
+- _Are you using descriptive variables in your project?_
+- _Would you like to use a consistent style in your group?_ 
+
+---
+# Comments
+- Comments that contradict the code are worse than no comments. Always make a priority of keeping the comments up-to-date when the code changes!
+- Ensure that your comments are clear and easily understandable to other speakers of the language you are writing in (ENGLISH!)
+- Inline comments are unnecessary and in fact distracting if they state the obvious. Don’t do this:
+
+```python
+x = x + 1                 # Increment x
+```
+
+This is more useful
+```python
+x = x + 1                 # Compensate for border
+```
+
 ---
 # Styleguides
 
 - Python style manual: [PEP-8](https://www.python.org/dev/peps/pep-0008/)
 - MATLAB style guide: [MATLAB File-exchange](http://cnl.sogang.ac.kr/cnlab/lectures/programming/matlab/Richard_Johnson-MatlabStyle2_book.pdf)
-- R style manual: [Tidyverse style guide](https://style.tidyverse.org)
 
 ![width:800](https://imgs.xkcd.com/comics/code_quality.png)
+- _Are you already following a style guide?_
 
 ---
 # Your turn
@@ -138,27 +170,6 @@ Many IDEs extract these into a task list (e.g. [MATLAB](https://blogs.mathworks.
 - Separate code and data: data is specific, code need not be
   - consider using a config file for project-specific (meta)data in a interoperable datatype (`.json`, `yaml`)
   - but DO hard-code unchanging variables, e.g. `gravity = 9.80665`, **once**.
-
----
-# Modular code development
-
-## Some questions
-- What best practices can you recommend to arrive at well structured, modular code in your favourite programming language?
-- What would you recommend your colleague who starts in the same programming language?
-- How do you deal with code complexity in your projects?
-
----
-# Preventing the tar pit
-
-- Over time, software tends to become harder and harder to reason about
-- Small changes become harder to implement
-- Bugs start appearing in unexpected places
-- More time is spent debugging than developing
-- Complexity strangles development because it does not scale well
-  
----
-![width:650](img/development-speed.svg)
-What do you think think properly means?
 
 ---
 # Code reusability: some guidelines
@@ -217,11 +228,6 @@ print(temp_c)
   - Write routines in functions, i.e., code you reuse often
   - Identify potential functions by action: functions perform tasks (e.g. sorting, plotting, saving a file, transform data...)
  
-**Examples**
-- Import functions
-- Export functions
-- Plotting functions
-- ...
 
 ---
 # Code reusability through functions
@@ -257,22 +263,6 @@ indexAAG = indexString(myList,'AAG')
 Now, you can reuse your function elsewhere, made it general, and have added additional documentation
 
 ---
-
-# Modular vs monolith
-
-![height:440](img/tetris.svg)  ![bg right:50% height:500](img/tetris_help.svg)
-
----
-
-# Functions, functions, functions
-- Build your code from functions
-- Break your code down to more functions
-    - if you have too many levels of indentation
-    - if a function gets too long
-    - if a function does more than one thing
-    - if you find it hard to name a function
-    - if you find it hard to write tests for a function
----
 # Your turn: visualize your code!
 
 Choose:
@@ -293,40 +283,61 @@ Again, make notes in your code (`#TODO`!) if you see:
 - **Structured code**: this should be re-structured 
 
 What can you learn from your colleagues today?
+
+---
+
+# Modular vs monolith
+
+![height:440](img/tetris.svg)  ![bg right:50% height:500](img/tetris_help.svg)
+
+---
+
+# Functions, functions, functions
+- Build your code from functions
+- Break your code down to more functions
+    - if you have too many levels of indentation
+    - if a function gets too long
+    - if a function does more than one thing
+    - if you find it hard to name a function
+    - if you find it hard to write tests for a function
+---
+
+# <!-- fit --> Simplicity and clarity before elegance before efficiency
+
+**Avoid premature optimization**
+- Do not optimize
+- If you have to optimize, do not optimize
+- If you have to optimize, measure, do not guess
+
+**Simple is better than complex**
+![width:500px](img/god_knows.jpg)
+
+
 ---
 # Your turn: make a function
 
 You have visualized your code. Use your findings to improve it!
 
-- **Preferably**: take scripted code and turn it into a function, _or_ split an existing function into two or more functions.
+- **Preferably**: take scripted code and turn it into a function, _or_ split an existing function into two or more functions, _or_ generalize multiple similar functions (DRY!)
 
 - If there is no function to work on: try and address the readability of your code.
 
-_However_: for future exercises you will need at least one function, preferably with parameters, in your code! For example:
-
-```python
-def my_function(param_a, param_b):
-  if param_b == 99:
-    return None
-  
-  if param_a == 100:
-    do_something(param_a)
-  else:
-    do_something_else(param_a)
-```
----
-# Code robustness
-
-![errormanagement](images/errormanagement_implicit.svg)
----
-# Code robustness
-
-![errormanagement](images/errormanagement_explicit.svg)
+_However_: for future exercises you will need at least one function, preferably with parameters, in your code! 
 
 ---
 # Code robustness
 
-![errormanagement](images/errormanagement.svg)
+![errormanagement](img/errormanagement_implicit.svg)
+
+---
+# Code robustness
+
+![errormanagement](img/errormanagement_explicit.svg)
+
+---
+# Code robustness
+
+![errormanagement](img/errormanagement.svg)
 
 ---
 # Error management
@@ -334,7 +345,6 @@ def my_function(param_a, param_b):
 #### Protect the user:
 
 - Make assumptions and expectations explicit.
-
   - check values before processing them
   - identify and manage exceptions
 - Produce errors when expectations are not met.
@@ -344,8 +354,9 @@ def my_function(param_a, param_b):
   - log or report the error, to allow the user (or developer) to troubleshoot
   - if necessary: abort the run
   
+
 ---
-# Advanced robustness: unit tests
+# Advanced robustness: testing
 
 #### Protect the developer (you!)
 
@@ -363,7 +374,7 @@ _More on tests later..._
 
 ---
 # Throwing an error
-```{python, error=TRUE}
+```python
 def read_vector_value(index=0, my_vector=[10,5,4,12,25]):
     if index > len(my_vector) - 1:
         raise IndexError('Index higher than vector length.')
@@ -371,9 +382,10 @@ def read_vector_value(index=0, my_vector=[10,5,4,12,25]):
 
 read_vector_value(index=6)
 ```
---
+
+---
 #### Why not simply adjust the function output?
-```{python, error=TRUE}
+```python
 def read_vector_value(index=0, my_vector=[10,5,4,12,25]):
     if index > len(my_vector) - 1:
         return None
@@ -381,8 +393,9 @@ def read_vector_value(index=0, my_vector=[10,5,4,12,25]):
 
 print(read_vector_value(index=6))
 ```
---
-_Because it is unclear if `None` is expected behavior or indicative of a problem._
+- _Because it is unclear if `None` is expected behavior or indicative of a problem._
+- _Because you now need to handle `None` downstream_
+
 ---
 # Warning message without breaking
 #### An error breaks code execution
@@ -395,9 +408,9 @@ return(my_vector[index])
 
 print(read_vector_value(index=6))
 ```
---
+---
 #### Capture the error but release a warning
-```{R, error=TRUE}
+```
 read_vector_value <- function(index=1,my_vector=c(10,5,4,12,25)){
   if(index>length(my_vector)){
     warning("Index higher than vector length.")
@@ -482,10 +495,8 @@ tryCatch({
 - malformed text input
 - wrong data types
 
-![nouser](https://4.bp.blogspot.com/_YzKCMr-tcMM/S9bN9dGqgBI/AAAAAAAAALo/cxqBx5AaoYk/s640/23GORILLA.jpg)
-.footnote[
-Source: [cartoontester](https://cartoontester.blogspot.com/2010/02/thats-not-bug.html)
-]
+![bg right:40% width:500](https://4.bp.blogspot.com/_YzKCMr-tcMM/S9bN9dGqgBI/AAAAAAAAALo/cxqBx5AaoYk/s640/23GORILLA.jpg)
+
 ---
 
 # Your turn: explicit expectations
@@ -504,7 +515,13 @@ Source: [cartoontester](https://cartoontester.blogspot.com/2010/02/thats-not-bug
   - raise an error in case an argument is out of the range of acceptable values.
 
 ---
+# Testing your code 
 
+Untested software can be compared to uncalibrated detectors
+
+>_Before relying on a new experimental device, an experimental scientist always establishes its accuracy. A new detector is calibrated when the scientist observes its responses to known input signals. The results of this calibration are compared against the expected response._
+
+---
 # Unit testing
 Unit testing is a generic testing approach.
 
@@ -516,6 +533,21 @@ Extra packages\\imports are needed
   - https://github.com/r-lib/testthat, https://github.com/r-lib/testthis
 - in python with pytest, unittest
   - https://docs.python.org/3/library/unittest.html 
+
+
+---
+# When to write tests
+
+**It is always a balance: there is no "always/never"**
+
+### Questions to ask yourself
+- Can I easily verify the outcome of my code visually (plot)?
+- Do I want to reuse parts of my code?
+- Do others rely on the code?
+- Do I need to verify contributions form other developers
+
+![bg right:40% width:450](img/wtfs_per_minute_thumb.jpg)
+
 
 ---
 # Running unit tests
@@ -566,26 +598,15 @@ Or, when working in a notebook:
 ```{python}
 unittest.main(argv=['trick to make it work in a notebook'], exit=False)
 ```
+
 ---
-# Making a test fail
+# Summary: writing robust software
+- Error management
+- Try-except statements
+- Defensive programming
+- Unit tests
+- Automate with GitHub Actions
 
-```{python}
-import unittest
-class TestStringMethods(unittest.TestCase):
-    def test_retrieval(self):
-        self.assertEqual(read_vector_value(0), 10)
-    
-    def test_error(self):
-        with self.assertRaises(IndexError):
-            read_vector_value(5)
-            
-    def test_retrieval_wrong(self):
-        self.assertEqual(read_vector_value(0), 11)
+>_Program testing can be used to show the presence of bugs, but never to show their absence_
 
-```
----
-# Result of faulty test
-
-```{python, echo=FALSE}
-unittest.main(argv=['trick to make it work'], exit=False)
-```
+![bg right width:500](img/unit-testing.jpg)
