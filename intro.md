@@ -16,13 +16,17 @@ backgroundColor: #fff
 ---
 # Schedule
 
-13:30: Welcome
-13:45: FAIR software and reproducibility
-14:30: BREAK
-14:45: Version control
-15:45: BREAK
-16:00: Code quality
-16:45: Closing remarks and questions
+13:30 - Welcome
+13:45 - FAIR software and reproducibility
+
+14:30 - **BREAK**
+
+14:45 - Version control
+
+15:45 - **BREAK**
+
+16:00 - Code quality
+16:45 - Closing remarks and questions
 
 ---
 # Who am I?
