@@ -13,8 +13,8 @@ backgroundColor: #fff
 
 _Remember, your past self can also be the previous developer..._
 
-
 ---
+
 # A scary anekdote
 
 - A group of researchers obtain great results and submit their work to a high-profile journal.
@@ -32,18 +32,20 @@ _U.S. National Science Foundation (NSF) subcommittee on replicability in science
 ---
 
 #  Why all the talk about reproducible research?
-A 2016 survey in Nature revealed that irreproducible experiments are a problem across all domains of science:
+A 2016 [survey](https://www.nature.com/articles/533452a) in Nature revealed that irreproducible experiments are a problem across all domains of science:
 
 ![height:400](img/reproducibility_nature.jpg)
 
 ---
 
-# Would this be enough to reproduce?
+# Would this be enough?
 - Access to the code
 - Access to the data
 - (And let's assume we can replicate the environment)
 
 #### How confident do you feel?
+
+![width:700](img/Miracle.jpg)
 
 ---
 
@@ -62,6 +64,7 @@ A 2016 survey in Nature revealed that irreproducible experiments are a problem a
 ![bg right: height:600](./img/reproducible-definition-grid.jpg)
 
 ---
+
 # Advantages of reproducible code
 
 1. Track a complete history of your research (version control is a **must**)
@@ -85,7 +88,7 @@ A 2016 survey in Nature revealed that irreproducible experiments are a problem a
 
 ---
 
-# Lacking method decription
+# Problems begin with "Lacking method decription"
 
 Black box offered as scientific method:
 - "Method is adapted from..." and additional steps only superficially described
@@ -93,6 +96,8 @@ Black box offered as scientific method:
 - Complex models with no available code or even executable tools
 
 ![height:300](./img/Blackbox3D-withGraphs.png)
+
+---
 
 # Method and data
 >When results are produced by complex computational processes using large volumes of data, the methods section of a traditional scientific paper is insufficient to convey the necessary information for others to reproduce the results.
@@ -103,12 +108,14 @@ Black box offered as scientific method:
 - Provide information about the computational environment
 
 ---
+
 # What is a computational environment
 > Information about the computational environment where the study was originally executed, such as operating system, hardware architecture, and library dependencies.
 
-Do you think this is sufficient?
+#### Do you think this is sufficient?
 
 ---
+
 ## You should also consider...
 
 - versions of dependencies (and their interoperability)
@@ -121,13 +128,15 @@ Do you think this is sufficient?
 ![bg right:40% width:500](./img/python_environment.png)
 
 ---
-# Your turn: dependencies
+# Your turn: list your dependencies
 
-Inspect your project and list your dependencies
+#### Inspect your project and list your dependencies
 
 - operating system
 - python dependencies
 - MATLAB Add-ons
+
+#### List the steps to recreate your results
 
 ---
 
@@ -186,13 +195,17 @@ These platforms offer **collaboration tools** (issue tracker and project managem
 
 ---
 
-# How comfortable are you using git?
+# Some questions
 
-#### We could look into
+#### Are you using version control
+Topics we could discuss:
 - [GitHub without the command line](https://coderefinery.github.io/github-without-command-line/)
 - [Setting up git](https://utrechtuniversity.github.io/workshop-computational-reproducibility/docs/3-3-git.html)
 - Discuss collaborative practices in PVMD toolbox
 
+#### How do you handle collaborative issues?
+
+#### How would you like to work if you could decide?
 
 ---
 

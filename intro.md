@@ -50,9 +50,15 @@ Research Software Engineer at the [Digital Competence Center ](https://www.tudel
 ---
 # What will you do in this workshop?
 
-We want to teach you **good habits** that will make your work more accessible, thrustworthy, and reproducible by others. 
+- We want to teach you **good habits** that will make your work more accessible, thrustworthy, and reproducible by others. 
 
-#### You will get the opportunity to apply these habits during the workshop.
+- We want to discuss the current practices in your group
+
+- Try to adopt some best practices in your own code
+
+- Ask questions, so we can look into the issues you are currently facing
+
+>Disclaimer: this workshop should be seen as an appetizer. Many of the topics would warrant separate 3 hour workshops.
 
 ---
 

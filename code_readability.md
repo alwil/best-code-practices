@@ -1,6 +1,6 @@
 ---
 marp: true
-title: "Code Quality"
+title: "Code Readability"
 paginate: false
 theme: custom
 backgroundColor: #fff
