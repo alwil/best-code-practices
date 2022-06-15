@@ -121,11 +121,10 @@ function value = read_vector_value(index, my_vector)
     value = my_vector(index);    
 end
 ```
-
 This will catch the exception
 ```matlab
 try
-  value = read_vector_value(6)
+  value = read_vector_value(6, [10,5,4,12,25]);
 catch ME
   if (strcmp(ME.identifier, 'MyComponent:indexError'))
     disp("This is an exception")
@@ -142,9 +141,12 @@ end
 Consider early statements in the script to validate (data) input as a gatekeeper.
 
 With if/else:
-```python
-if not protein_data:
-  raise ValueError("Dataset cannot be empty")
+```matlab
+if isempty(protein_data)
+  ME = MException('MyComponent:valueError', ...
+            'Data set cannot be empty');
+        throw(ME)
+end
 ```
 
 _Tip: create a function to check inputs or use an argument parser_
@@ -200,16 +202,19 @@ Untested software can be compared to uncalibrated detectors
 
 >_Before relying on a new experimental device, an experimental scientist always establishes its accuracy. A new detector is calibrated when the scientist observes its responses to known input signals. The results of this calibration are compared against the expected response._
 
+#### How do you now check the validity of your analysis?
+
 ---
 
 # Unit testing
 Unit testing is a generic testing approach.
 
-Your software is tested by focusing on smaller units, for instance a series of functions or class.
+Your software is tested by focusing on smaller units, for instance a function or class.
 
-Extra packages\imports are needed
 
-- in python with [pytest](https://docs.pytest.org/en/7.1.x/) or [unittest](https://docs.python.org/3/library/unittest.html)
+
+- in python with [pytest](https://docs.pytest.org/en/7.1.x/) or [unittest](https://docs.python.org/3/library/unittest.html) 
+_(Extra packages\imports are needed)_
 - in Matlab with [Testing frameworks](https://nl.mathworks.com/help/matlab/matlab-unit-test-framework.html)
 
 ![bg right:40% width:400](img/unit-testing.jpg)
@@ -224,22 +229,24 @@ Extra packages\imports are needed
 - Can I easily verify the outcome of my code visually (plot)?
 - Do I want to reuse parts of my code?
 - Do others rely on the code?
-- Do I need to verify contributions form other developers
+- Do I need to verify contributions from other developers?
 - How do I ensure bugs don't return?
 
 ---
 
-# Example: Testing our read_vector function
+# Python: Testing our read_vector function
 
 With pytest
 ```python
 # test_read_vector_value.py
-def test_retrieval(self):
-    self.assertEqual(read_vector_value(0), 10)
+import read_vector_value
+import pytest
+def test_retrieval():
+    assert read_vector_value(0) == 10
 
-def test_error(self):
-    with self.assertRaises(IndexError):
-        read_vector_value(5)
+def test_error():
+    with pytest.assertRaises(IndexError):
+        read_vector_value(6)
 
 ```
 
@@ -249,9 +256,9 @@ pytest test_read_vector_value.py
 ```
 
 ---
-# Example: Testing our read_vector function
+# MATLAB: Testing our read_vector function
 
-In Matlab (with script-based testing)
+Using script-based testing
 ```matlab
 % test parameters
 my_vector = [10,5,4,12,25];
@@ -288,14 +295,11 @@ pip install pytest
 
 ---
 
-# Summary: writing robust software
+# Recommendations for writing robust software
 - Error management
 - Try-except statements
 - Defensive programming
 - Unit tests
 - Automate with GitHub Actions / Gitlab runners
 
-#### Example: [PVMD Toolbox CI pipeline](https://gitlab.tudelft.nl/mrvogt/toolbox-m-code/-/pipelines/118914)
-
-
-_Discuss the automated test framework in the PVMD toolbox with Malte or Alba_
+#### Example: [PVMD Toolbox Continuous Integration pipeline](https://gitlab.tudelft.nl/mrvogt/toolbox-m-code/-/pipelines/118914)

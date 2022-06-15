@@ -153,11 +153,13 @@ x = x + 1                 # Compensate for border
 ---
 
 # Styleguides
+![height:200](https://imgs.xkcd.com/comics/code_quality.png)
 
 - Python style manual: [PEP-8](https://www.python.org/dev/peps/pep-0008/)
 - MATLAB style guide: [MATLAB File-exchange](http://cnl.sogang.ac.kr/cnlab/lectures/programming/matlab/Richard_Johnson-MatlabStyle2_book.pdf)
+- Custom: [PVMD Toolbox](https://mrvogt.github.io/PVMD_docs/develop/style_guide.html)
 
-![width:800](https://imgs.xkcd.com/comics/code_quality.png)
+
 _Are you already following a style guide? 
 Would it make sense to adopt a style guide for the group?_
 
