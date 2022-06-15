@@ -25,9 +25,9 @@ math: mathjax
 
 ![bg left:40% width:400](img/complex-machine.jpg)
 
----
+<!-- --- -->
 
-![bg left: width:400](https://imgs.xkcd.com/comics/good_code.png)
+<!-- ![bg left: width:400](https://imgs.xkcd.com/comics/good_code.png) -->
 
 ---
 
@@ -39,16 +39,16 @@ math: mathjax
 - More time is spent debugging than developing
 - Complexity strangles development because it does not scale well
   
-_Do you recognize this?_
+_Do you recognize this? Can you give an example?_ 
 
 ---
 
 ![width:650](img/development-speed.svg)
-Do you agree and what do you think "properly" means?
+_Do you agree and what do you think "properly" means?_
 
 ---
 
-# Moduarity and composition
+# Modularity and composition
 
 - Build complex behaviour from simple components
 - We can reason about the components and the composite
@@ -83,6 +83,8 @@ Do you agree and what do you think "properly" means?
   - Write routines in functions, i.e., code you reuse often
   - Identify potential functions by action: functions perform tasks (e.g. sorting, plotting, saving a file, transform data...)
   - Single source of truth reduces maintenance and makes debugging easier
+
+_Note, in MATLAB a function can only be called from a script if it bears it's name_
 
 ---
 
@@ -235,7 +237,6 @@ Again, make notes in your code (`#TODO`!) if you see:
 
 ![bg left: width:1000px](img/god_knows.jpg)
 
-
 ---
 
 # Your turn: make a function
@@ -250,7 +251,7 @@ _However_: for future exercises you will need at least one function, preferably 
 
 ---
 
-# Conclusions
+# Recommendations
 - Divide and isolate
 - Compose your code out of pure functions
 - Keep it simple
