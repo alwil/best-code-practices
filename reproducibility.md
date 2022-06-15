@@ -306,6 +306,16 @@ _Slide by: Chue Hong, Neil (2021): Doing Science in the Digital Age (a personal 
 
 ___
 
+# Want to learn more?
+- Software Carpentry [lessons](https://software-carpentry.org/lessons/)
+- Code Refinery [lessons](https://coderefinery.org/lessons/)
+
+#### Join a workshop (and receive GS credits)
+- TU Delft [Training for Researchers](https://www.tudelft.nl/library/research-data-management/r/training-evenementen/training-voor-onderzoekers) (not available for students)
+- Self-paced study (available to all!)
+
+---
+
 # The FAIR principles
 
 Original paper demands that all scholarly digital research objects should be findable,
