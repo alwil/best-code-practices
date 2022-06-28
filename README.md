@@ -1,5 +1,7 @@
 # Slides for PVMD workshop
 
+[![CC BY 4.0][cc-by-shield]][cc-by]
+
 These materials are collected for a workshop on reproducible research software for the [PVMD group at the TU Delft](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/electrical-sustainable-energy/photovoltaic-materials-and-devices).
 
 ## What will you do in this workshop?
