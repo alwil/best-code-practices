@@ -34,3 +34,7 @@ The materials in this repositry make use of the following sources:
 - Esther Plomp - [Open Science: Crash Course](https://estherplomp.github.io/PRES-data-software/#1)
 
 All these sources are available under a Creative Common License 
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
