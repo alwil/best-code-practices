@@ -17,7 +17,7 @@ These materials are collected for a workshop on reproducible research software f
 
 #### Join a workshop (and receive GS credits)
 - TU Delft [Training for Researchers](https://www.tudelft.nl/library/research-data-management/r/training-evenementen/training-voor-onderzoekers) (not available for students)
-- Self-paced study (available to all!)
+- Self-paced study (available to all!). The lessons from the Carpentries and Code Refineries were designed for self-paced learning.
 
 
 ## References
