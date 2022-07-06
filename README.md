@@ -2,7 +2,7 @@
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
-These materials are collected for a workshop on reproducible research software for the [PVMD group at the TU Delft](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/electrical-sustainable-energy/photovoltaic-materials-and-devices).
+These materials are collected for a workshop on reproducible research software for the [PVMD group at the TU Delft](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/electrical-sustainable-energy/photovoltaic-materials-and-devices). You can find and download the pdf slides [here](https://github.com/mwakok/PVMD-workshop/tree/main/software_workshop/pdf)
 
 ## What will you do in this workshop?
 
@@ -24,7 +24,7 @@ These materials are collected for a workshop on reproducible research software f
 
 ## References
 
-The materials in this repositry make use of the following sources:
+The materials in this repository make use of the following sources:
 
 - The Turing Way - [Guide for Reproducible Research](https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html)
 - Utrecht University - [Best Practices In Writing Reproducible Code](https://utrechtuniversity.github.io/workshop-computational-reproducibility/docs/)
