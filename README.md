@@ -4,6 +4,8 @@
 
 These materials are collected for a workshop on reproducible research software for the [PVMD group at the TU Delft](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/electrical-sustainable-energy/photovoltaic-materials-and-devices). You can find and download the pdf slides [here](https://github.com/mwakok/PVMD-workshop/tree/main/software_workshop/pdf).
 
+The slides were created with the [Marp plugin for VS Code](https://marp.app/).
+
 ## What will you do in this workshop?
 
 - We want to teach you **good habits** that will make your work more accessible, thrustworthy, and reproducible by others. 
