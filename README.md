@@ -1,4 +1,4 @@
-# Slides with bes coding practices
+# Slides with best coding practices
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
