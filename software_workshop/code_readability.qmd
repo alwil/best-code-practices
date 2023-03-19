@@ -1,0 +1,194 @@
+---
+title: "Code Readability"
+format: 
+  revealjs:
+    footer: "Code Readability"
+    chalkboard: true
+    mouse-wheel: true 
+---
+
+
+```{r}
+#| label: setup
+#| include: false
+
+knitr::opts_chunk$set(
+  cache = FALSE,
+  echo = TRUE,
+  eval = FALSE
+  )
+```
+
+## Aspects of good quality code
+
+::: columns
+::: {.column width="40%"}
+
+-   Readability
+-   Reusability
+-   Robustness
+:::
+
+::: {.column width="60%"}
+![](img/wtfs_per_minute_thumb.jpg)
+:::
+:::
+
+
+# I. Code readability
+
+## Code readability
+
+#### Who is the audience that will read your code?
+
+::: {.fragment .strike}
+> Code is for computer, comments are for humans.
+
+:::
+
+::: {.fragment .fade-up}
+Use whitespace and newlines strategically.
+:::
+
+------------------------------------------------------------------------
+
+#### Compare:
+
+``` {python}
+
+if foo == 'blah': do_blah_thing()
+do_one(); do_two(); do_three()
+```
+
+**with**
+
+``` {python}
+
+if foo == 'blah':
+    do_blah_thing()
+
+do_one()
+do_two()
+do_three()
+```
+
+. . .
+
+Compound statements are generally discouraged, make generous use of newlines
+
+
+## Naming convention
+
+-   Use descriptive names for functions and variables
+    
+    + Start functions with a **verb**
+    + Start objects with a **noun**
+    + Make variable names *just* long enough to be meaningful
+
+------------------------------------------------------------------------
+
+**Compare**
+
+``` {python}
+for i in my_shopping_basket:
+  if(test(i)) > 10:
+    purch(i)
+  else:
+    disc(i)
+```
+
+**with**
+
+``` {python}
+for item in basket:
+  if(testNecessity(item)) > 10:
+    purchase(item)
+  else:
+    discard(item)
+```
+
+
+## Programming style
+
+-   Use a consistent style
+    
+    + Consistency will make your code easier to understand and maintain
+    + Consult a styleguide for your language (keep conventions, and don't reinvent the wheel)
+
+------------------------------------------------------------------------
+
+## Variable naming
+
+Compare:
+
+``` {r}
+myVar = original_variable + MOD(new.var)
+```
+
+with
+
+``` {r}
+my_var = original_var + modified(new_var)
+```
+
+. . .
+
+
+
+**Consistency is key!**
+
+
+## Comments {.smaller}
+
+-   Comments that contradict the code are worse than no comments. Always make a priority of keeping the comments up-to-date when the code changes!
+-   Ensure that your comments are clear and easily understandable to other speakers of the language you are writing in (ENGLISH!)
+-   Delete commented code
+-   Inline comments are unnecessary and in fact distracting if they state the obvious.
+
+
+
+Don't do this
+
+``` {r}
+x = x + 1                 # Increment x
+```
+
+This is more useful
+
+``` {r}
+x = x + 1                 # Compensate for border
+```
+
+
+
+## Styleguides
+
+
+-   Python style manual: [PEP-8](https://www.python.org/dev/peps/pep-0008/)
+-   MATLAB style guide: [MATLAB File-exchange](http://cnl.sogang.ac.kr/cnlab/lectures/programming/matlab/Richard_Johnson-MatlabStyle2_book.pdf)
+-   R [tidyverse style guide](https://style.tidyverse.org/)
+
+
+![](https://imgs.xkcd.com/comics/code_quality.png)
+
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- # Your turn -->
+
+<!-- #### Where can you improve the readability of your code? -->
+
+<!-- -   Run a linter (e.g. `flake8` for Python, `checkcode` for MATLAB, or `lintr` for R) to identify conflicts with style guides. -->
+
+<!-- -   If you find code that is hard to read, make a note to work on it. (Schedule time to refactor, but do not do this now!) -->
+
+<!-- *Tip! Use* `%TODO` *or* `#TODO` *(depending on your comment marker) to easily find these spots later on. Many IDEs can extract these into a task list (including [MATLAB](https://nl.mathworks.com/help/matlab/matlab_prog/add-reminders-to-files.html))!* -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ## Were you able to improve readability? -->
+
+<!-- -   Naming conventions -->
+<!-- -   Comments -->
+<!-- -   Formatting -->
+<!-- -   Compound statements -->
