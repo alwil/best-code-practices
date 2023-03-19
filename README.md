@@ -1,19 +1,9 @@
-# Slides for PVMD workshop
+# Slides with bes coding practices
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
-These materials are collected for a workshop on reproducible research software for the [PVMD group at the TU Delft](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/electrical-sustainable-energy/photovoltaic-materials-and-devices). You can find and download the pdf slides [here](https://github.com/mwakok/PVMD-workshop/tree/main/software_workshop/pdf).
+These materials were originally collected for a workshop on reproducible research software for the [PVMD group at the TU Delft](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/electrical-sustainable-energy/photovoltaic-materials-and-devices). Please find the original repository [here](https://github.com/mwakok/PVMD-workshop).
 
-The slides were created with the [Marp plugin for VS Code](https://marp.app/).
-
-## What will you do in this workshop?
-
-- We want to teach you **good habits** that will make your work more accessible, thrustworthy, and reproducible by others. 
-- We want to discuss and review the current practices in your group
-- Try to adopt some best practices in your own code
-- Ask questions, so we can look into the issues you are currently facing
-
->Disclaimer: this workshop should be seen as an appetizer. Many of the topics would warrant separate 3 hour workshops.
 
 ## Want to learn more?
 - Software Carpentry [lessons](https://software-carpentry.org/lessons/)
