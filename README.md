@@ -4,6 +4,8 @@
 
 These materials were originally collected for a workshop on reproducible research software for the [PVMD group at the TU Delft](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/electrical-sustainable-energy/photovoltaic-materials-and-devices). Please find the original repository [here](https://github.com/mwakok/PVMD-workshop).
 
+## Slides 
+- [Code Robustness](https://raw.githack.com/alwil/best-code-practices/main/software_workshop/code_robustness.html#/title-slide)
 
 ## Want to learn more?
 - Software Carpentry [lessons](https://software-carpentry.org/lessons/)
