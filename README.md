@@ -6,6 +6,7 @@ These materials were originally collected for a workshop on reproducible researc
 
 ## Slides 
 - [Code Robustness](https://raw.githack.com/alwil/best-code-practices/main/software_workshop/code_robustness.html#/title-slide)
+- [Code Readibility](https://raw.githack.com/alwil/best-code-practices/main/software_workshop/code_readability.html)
 
 ## Want to learn more?
 - Software Carpentry [lessons](https://software-carpentry.org/lessons/)
